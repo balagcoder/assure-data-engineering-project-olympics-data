@@ -10,3 +10,8 @@ dbutils.fs.mount(
 source = "abfss://tokyo-olympic-data@tokyoolympicdatabala.dfs.core.windows.net", # contrainer@storageacc
 mount_point = "/mnt/tokyoolymic",
 extra_configs = configs)
+
+In cmd2 write this
+
+%fs
+ls "/mnt/tokyoolymic"
