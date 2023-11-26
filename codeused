@@ -1,0 +1,12 @@
+#In databricks
+
+configs = {"fs.azure.account.auth.type": "OAuth",
+"fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+"fs.azure.account.oauth2.client.id": "fef0c44b-5768-41be-84ac-1b6b4188b1ba",
+"fs.azure.account.oauth2.client.secret": 'EuI8Q~f~ovAKezAip6aIrN9rfcpLEAGTzgWsxc9x',
+"fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/0852a428-1262-42df-b40c-a1ff785c0876/oauth2/token"}
+
+dbutils.fs.mount(
+source = "abfss://tokyo-olympic-data@tokyoolympicdatabala.dfs.core.windows.net", # contrainer@storageacc
+mount_point = "/mnt/tokyoolymic",
+extra_configs = configs)
