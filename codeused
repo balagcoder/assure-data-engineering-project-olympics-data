@@ -26,3 +26,12 @@ average_entries_by_gender = EntriesGender.withColumn(
     'Avg_Male', EntriesGender['Male'] / EntriesGender['Total']
 )
 average_entries_by_gender.show()
+
+
+
+#Used in Azure Synapse
+
+SELECT TOP 5 Country, count(*) AS TotalAthletes
+FROM athletes
+GROUP BY Country
+ORDER BY TotalAthletes DESC
