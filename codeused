@@ -15,3 +15,14 @@ In cmd2 write this
 
 %fs
 ls "/mnt/tokyoolymic"
+
+# Find the top countries with the highest number of gold medals
+top_gold_medal_countries = Medals.orderBy("Gold", ascending=False).select("Team_Country","Gold").show()
+
+# Calculate the average number of entries by gender for each discipline
+average_entries_by_gender = EntriesGender.withColumn(
+    'Avg_Female', EntriesGender['Female'] / EntriesGender['Total']
+).withColumn(
+    'Avg_Male', EntriesGender['Male'] / EntriesGender['Total']
+)
+average_entries_by_gender.show()
